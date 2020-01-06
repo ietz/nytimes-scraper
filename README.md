@@ -1,4 +1,7 @@
 # nytimes-scraper
+
+[![PyPI](https://img.shields.io/pypi/v/nytimes-scraper)](https://pypi.org/project/nytimes-scraper/)
+
 Scrape article metadata and comments from NYTimes
 
 ## Setup
