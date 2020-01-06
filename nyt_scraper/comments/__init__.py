@@ -1,1 +1,2 @@
 from nyt_scraper.comments.scraper import fetch_comments_by_article, fetch_comments
+from nyt_scraper.comments.postprocessing import comments_to_df
