@@ -1,0 +1,1 @@
+from nyt_scraper.comments.scraper import fetch_comments_by_article, fetch_comments
