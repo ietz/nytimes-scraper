@@ -1,0 +1,12 @@
+name: nyt-scraper
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas=0.25.3
+  - pip=19.3.1
+  - python=3.8.0
+  - python-dotenv=0.10.3
+  - requests=2.22.0
+  - tqdm=4.41.1
