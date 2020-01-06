@@ -9,7 +9,7 @@ from nytimes_scraper.comments import fetch_comments, comments_to_df
 from nytimes_scraper.nyt_api import NytApi
 
 
-out_dir = Path.cwd() / 'data'
+out_dir = Path.cwd()
 
 
 def run_scraper(api_key: str):
