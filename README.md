@@ -1,29 +1,23 @@
-# nyt-scraper
+# nytimes-scraper
 Scrape article metadata and comments from NYTimes
 
 ## Setup
-1. Install the [Anaconda python runtime](https://anaconda.org/)
-1. Create the python environment with  
-   `conda env create -f environment.yml`  
-   or update an existing `nyt-scraper` environment to match remote dependency changes by executing  
-   `conda env update -f environment.yml --prune`
-1. Activate the conda environment  
-   `conda activate nyt-scraper`
+```bash
+pip install nytimes-scraper
+```
 
 ## CLI usage
 The scraper will automatically fetch metadata and comments for every article published on
 [nytimes.com](https://www.nytimes.com/).
 Articles are processed month by month, starting with the current month.
 For each month, a `{year}-{month}-articles.pickle` and `{year}-{month}-comments.pickle` will be
-generated in the `data` directory.
+generated in the current directory.
 If the process is restarted, existing outputs will not be overridden and the scraper will continue
 at the month where it left off.
-To use it
-
-1. Create a copy of `.env.example` in the repository root directory and name it `.env`
-2. Update the values in `.env` as needed
-3. Run the scraper
-   `python main.py`
+To use it, run
+```bash
+python -m nytimes_scraper <API_KEY>
+```
 
 ## Programmatic usage
 The scraper can also be started programmatically
