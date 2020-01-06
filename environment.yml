@@ -1,4 +1,4 @@
-name: nyt-scraper
+name: nytimes-scraper
 channels:
   - anaconda
   - conda-forge

@@ -2,8 +2,8 @@ from typing import List, Dict, Optional, Tuple
 
 from tqdm import tqdm
 
-from nyt_scraper.comments.util import flatten_replies
-from nyt_scraper.nyt_api.api import NytApi
+from nytimes_scraper.comments.util import flatten_replies
+from nytimes_scraper.nyt_api.api import NytApi
 
 
 def fetch_comments(api: NytApi, article_ids_and_urls: List[Tuple[str, str]], show_progess: bool = True, pagination_size: int = 100) -> List[Dict]:

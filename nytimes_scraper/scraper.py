@@ -4,9 +4,9 @@ from typing import Tuple, Callable
 
 import pandas as pd
 
-from nyt_scraper.articles import fetch_articles_by_month, articles_to_df
-from nyt_scraper.comments import fetch_comments, comments_to_df
-from nyt_scraper.nyt_api import NytApi
+from nytimes_scraper.articles import fetch_articles_by_month, articles_to_df
+from nytimes_scraper.comments import fetch_comments, comments_to_df
+from nytimes_scraper.nyt_api import NytApi
 
 
 out_dir = Path.cwd() / 'data'

@@ -3,7 +3,7 @@ from typing import List, Dict
 import pandas as pd
 import pandas.io.json
 
-from nyt_scraper.comments.util import flatten_replies, remove_reply_references
+from nytimes_scraper.comments.util import flatten_replies, remove_reply_references
 
 
 def comments_to_df(comments: List[Dict]) -> pd.DataFrame:

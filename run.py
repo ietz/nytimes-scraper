@@ -1,6 +1,6 @@
 import os
 
-from nyt_scraper import run_scraper
+from nytimes_scraper import run_scraper
 
 from dotenv import load_dotenv
 

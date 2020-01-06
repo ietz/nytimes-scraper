@@ -1,7 +1,7 @@
 import datetime as dt
 from typing import List, Dict
 
-from nyt_scraper.nyt_api.api import NytApi
+from nytimes_scraper.nyt_api.api import NytApi
 
 
 def fetch_articles_by_month(api: NytApi, date: dt.date) -> List[Dict]:

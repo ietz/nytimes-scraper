@@ -29,7 +29,7 @@ To use it
 The scraper can also be started programmatically
 ```python
 import datetime as dt
-from nyt_scraper import run_scraper, scrape_month
+from nytimes_scraper import run_scraper, scrape_month
 
 # scrape february of 2020
 article_df, comment_df = scrape_month('<your_api_key>', date=dt.date(2020, 2, 1))
@@ -38,13 +38,13 @@ article_df, comment_df = scrape_month('<your_api_key>', date=dt.date(2020, 2, 1)
 run_scraper('<your_api_key>')
 ```
 
-Alternatively, the `nyt_scraper.articles` and `nyt_scraper.comments` modules can be used for more
+Alternatively, the `nytimes_scraper.articles` and `nytimes_scraper.comments` modules can be used for more
 fine-grained access:
 ```python
 import datetime as dt
-from nyt_scraper.nyt_api import NytApi
-from nyt_scraper.articles import fetch_articles_by_month, articles_to_df
-from nyt_scraper.comments import fetch_comments, fetch_comments_by_article, comments_to_df
+from nytimes_scraper.nyt_api import NytApi
+from nytimes_scraper.articles import fetch_articles_by_month, articles_to_df
+from nytimes_scraper.comments import fetch_comments, fetch_comments_by_article, comments_to_df
 
 api = NytApi('<your_api_key>')
 

@@ -1,5 +1,5 @@
-from nyt_scraper.nyt_api.archive import ArchiveApi
-from nyt_scraper.nyt_api.community import CommunityApi
+from nytimes_scraper.nyt_api.archive import ArchiveApi
+from nytimes_scraper.nyt_api.community import CommunityApi
 
 
 class NytApi:
