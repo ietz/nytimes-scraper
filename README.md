@@ -10,7 +10,7 @@ pip install nytimes-scraper
 ```
 
 ## CLI usage
-The scraper will automatically fetch metadata and comments for every article published on
+The scraper will automatically fetch every article and all the user comments published on
 [nytimes.com](https://www.nytimes.com/).
 Articles are processed month by month, starting with the current month.
 For each month, a `{year}-{month}-articles.pickle` and `{year}-{month}-comments.pickle` will be
