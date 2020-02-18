@@ -10,7 +10,7 @@ readme = (here / 'README.md').read_text()
 # This call to setup() does all the work
 setup(
     name='nytimes-scraper',
-    version='1.0.0',
+    version='1.1.0',
     description='Scrape article metadata and comments from NYTimes',
     long_description=readme,
     long_description_content_type='text/markdown',
@@ -25,5 +25,12 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['pandas', 'requests', 'tqdm', 'fire'],
+    install_requires=[
+        'cssselect',
+        'fire',
+        'lxml',
+        'pandas',
+        'requests',
+        'tqdm',
+    ],
 )
