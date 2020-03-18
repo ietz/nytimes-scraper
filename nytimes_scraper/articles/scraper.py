@@ -15,8 +15,11 @@ def fetch_articles_by_month(api: NytApi, date: dt.date, show_progress: bool = Tr
 
     articles = api.archive.archive(date.year, date.month)['response']['docs']
     for article in tqdm(articles, unit='Article', disable=not show_progress):
-        article['html'] = fetch_article_html(article['web_url'])
-        article['text'] = scrape_article_text(article['html'])
+        try:
+            article['html'] = fetch_article_html(article['web_url'])
+            article['text'] = scrape_article_text(article['html'])
+        except ValueError:
+            pass
 
     return articles
 
