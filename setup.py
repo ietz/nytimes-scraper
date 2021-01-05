@@ -10,7 +10,7 @@ readme = (here / 'README.md').read_text()
 # This call to setup() does all the work
 setup(
     name='nytimes-scraper',
-    version='1.1.0',
+    version='1.1.2',
     description='Scrape article metadata and comments from NYTimes',
     long_description=readme,
     long_description_content_type='text/markdown',
