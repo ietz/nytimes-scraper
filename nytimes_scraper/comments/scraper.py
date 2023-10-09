@@ -7,31 +7,31 @@ from nytimes_scraper.nyt_api.api import NytApi
 
 
 def fetch_comments(api: NytApi, article_ids_and_urls: List[Tuple[str, str]], show_progess: bool = True, pagination_size: int = 100) -> List[Dict]:
-    """Fetch all comments from multiple articles, given a list of article IDs and URLs
-    `[(id_1, url_1), (id_2, url_2), …]`
-
-    The IDs are not used for processing but are added to the comment objects as an attribute for
-    later reference."""
+    """Fetch all comments from multiple articles, given a list of article IDs and URLs."""
 
     comments = []
     for article_id, article_url in tqdm(article_ids_and_urls, unit='Article', disable=not show_progess):
-        comments.extend(fetch_comments_by_article(api, article_url, article_id=article_id, pagination_size=pagination_size))
+        article_comments = fetch_comments_by_article(api, article_url, article_id=article_id, pagination_size=pagination_size)
+        comments.extend(article_comments)
 
     return comments
-
 
 def fetch_comments_by_article(api: NytApi, article_url: str, article_id: Optional[str] = None, pagination_size: int = 100) -> List[Dict]:
-    """Fetch all comments from one specific article"""
+    """Fetch all comments from one specific article."""
 
-    comments = fetch_top_level_comments(api, article_url, pagination_size=pagination_size)
-    fetch_replies(api, article_url, comments, pagination_size=pagination_size)
+    try:
+        comments = fetch_top_level_comments(api, article_url, pagination_size=pagination_size)
+        fetch_replies(api, article_url, comments, pagination_size=pagination_size)
 
-    if article_id is not None:
-        for comment in flatten_replies(comments):
-            comment['articleID'] = article_id
+        if article_id is not None:
+            for comment in flatten_replies(comments):
+                comment['articleID'] = article_id
 
-    return comments
-
+        return comments
+    except Exception as e:
+        print(f"Error processing comments for article {article_url}: {e}")
+        # Return an empty comment list for the article
+        return []
 
 def fetch_top_level_comments(api: NytApi, article_url: str, pagination_size: int) -> List[Dict]:
     """Fetch all top level comments by paginating through the comment list.
